@@ -1,0 +1,7 @@
+sudo : required
+services :
+  - docker
+before install :
+  - docker build -t ashishkarhale/DockerApp -f Dockerfile.dev
+script :
+  - docker run ashishkarhale/DockerApp npm run test -- -- coverage
